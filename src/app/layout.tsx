@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Roboto, Agbalumo } from 'next/font/google'
 import './globals.css'
-
+import { AppWrapper } from '@/context/index';
 // const inter = Inter({ subsets: ['latin'] })
 // const inter = Roboto({ weight: '400', subsets: ['latin'] })
 const inter = Agbalumo({ weight: '400', subsets: ['latin'] })
@@ -19,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AppWrapper>{children}</AppWrapper>
+      </body>
     </html>
   )
 }
