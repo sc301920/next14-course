@@ -2,15 +2,12 @@
 "use client";
 
 import Image from 'next/image'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import logo from  '../../public/logo_light.png'
 import next from  '../../public/next.svg'
 import { useState } from 'react'
 import { useAppContext } from '@/context';
 import { useUserStore } from '@/store/user';
 export default function Home() {
-  const name = "klay"
   const  [loading, setLoading] = useState(false)
   const fetchData = async () => {
     try {
@@ -39,8 +36,8 @@ export default function Home() {
   })
   return (
     <main className="">
-      <Header name={name}/>
-      <h1>hello world</h1>
+      <div>content</div>
+      {/* <h1>hello world</h1>
       <div>{hello}</div>
       <Image quality={60} src={logo} width={1000} height={1000} alt={''} />
       <div>
@@ -50,8 +47,7 @@ export default function Home() {
       <p>{user.name}</p>
       <input type="text" onChange={(e:any)=>{
         setUser({name:e.target.value})
-      }}/>
-      <Footer />
+      }}/> */}
     </main>
     // <div>my main page of app</div>
   )
