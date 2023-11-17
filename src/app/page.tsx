@@ -1,12 +1,13 @@
 
 "use client";
 
-import Image from 'next/image'
-import logo from  '../../public/logo_light.png'
-import next from  '../../public/next.svg'
+// import Image from 'next/image'
+// import logo from  '../../public/logo_light.png'
+// import next from  '../../public/next.svg'
 import { useState } from 'react'
 import { useAppContext } from '@/context';
 import { useUserStore } from '@/store/user';
+import MainSwiper from '@/components/mainSwiper'
 export default function Home() {
   const  [loading, setLoading] = useState(false)
   const fetchData = async () => {
@@ -36,7 +37,7 @@ export default function Home() {
   })
   return (
     <main className="">
-      <div>content</div>
+      <MainSwiper></MainSwiper>
       {/* <h1>hello world</h1>
       <div>{hello}</div>
       <Image quality={60} src={logo} width={1000} height={1000} alt={''} />

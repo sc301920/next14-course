@@ -1,7 +1,7 @@
 export const headerData={
     title: '网站名称',
     logo: {
-      image: "/logo_light.png",
+      image: "/logo_dark.png",
       text: 'logo'
     },
     menu: [

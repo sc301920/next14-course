@@ -11,7 +11,9 @@ export default function Header(props:HeaderProps){
   const [hoverIndex, setHoverIndex] = useState(-2);
   const [isOpen, setOpen] = useState(false);
   return (
-    <header className="flex items-center justify-between w-full h-16 sticky top-0 left-0 px-5 z-10">
+    <header 
+    className={['flex items-center justify-between w-full h-16 fixed top-0 left-0 px-5 z-10 ', hoverIndex>-2 ? 'text-black':' text-white'].join('')}
+    >
       <a href="http://localhost:3000/">
         <h1><Image src={props.logo.image} alt={props.title.toString()} width={70} height={20} /></h1>
       </a>

@@ -3,7 +3,7 @@ import { useState } from "react";
 export interface HeaderProps {
   menu: HeaderLink[];
   hover: Function;
-  hoverIndex: Number
+  hoverIndex: number
 }
 
 interface HeaderLink {
@@ -20,7 +20,8 @@ interface ILink {
 export default function Menu({ menu, hover, hoverIndex }:HeaderProps){
   const [hoverMenuIndex, setMenuHoverIndex] = useState(-1);
   return ( 
-    <div className="flex justify-center max-lg:hidden" 
+    <div
+      className={['flex justify-center max-lg:hidden'].join('')}
       onMouseOver={() => {
         hover(-1);
       }}

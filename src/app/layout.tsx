@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <AppWrapper>
           <Header {...headerData} />
-          <div className='p-2'>{children}</div>
+          <div>{children}</div>
           <Footer {...footerData} />
         </AppWrapper>
       </body>
