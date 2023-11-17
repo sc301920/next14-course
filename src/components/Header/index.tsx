@@ -3,16 +3,25 @@ import { useState } from "react";
 import Menu from "./menu";
 import MobileMenuIcon from "./mobile";
 import MobileMenu from "./mobileMenu";
-
+import { useHeaderStore } from '@/store/header';
 import Image from "next/image";
-
+import { usePathname } from "next/navigation";
 export default function Header(props:HeaderProps){
   // const [isHover, setIsHover] = useState(false)
-  const [hoverIndex, setHoverIndex] = useState(-2);
+  const headerStore = useHeaderStore()
+  const hoverIndex = useHeaderStore((state:any)=>state.hoverIndex)
+  const setHoverIndex = useHeaderStore((state:any)=>state.setHoverIndex)
+  // const [hoverIndex, setHoverIndex] = useState(-2);
   const [isOpen, setOpen] = useState(false);
+  const pathname = usePathname();
+
   return (
     <header 
-    className={['flex items-center justify-between w-full h-16 fixed top-0 left-0 px-5 z-10 ', hoverIndex>-2 ? 'text-black':' text-white'].join('')}
+      className={[
+        'flex items-center justify-between w-full h-16 fixed top-0 left-0 px-5 z-10 ',
+        hoverIndex>-2 ? 'text-black':' text-white',
+        pathname == '/' ? ' ':' bg-white ']
+        .join('')}
     >
       <a href="http://localhost:3000/">
         <h1><Image src={props.logo.image} alt={props.title.toString()} width={70} height={20} /></h1>

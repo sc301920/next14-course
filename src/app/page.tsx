@@ -7,7 +7,9 @@
 import { useState } from 'react'
 import { useAppContext } from '@/context';
 import { useUserStore } from '@/store/user';
-import MainSwiper from '@/components/mainSwiper'
+import MainSwiper from '@/components/mainSwiper';
+import News from '@/components/News';
+import { newsData } from '@/config/news'
 export default function Home() {
   const  [loading, setLoading] = useState(false)
   const fetchData = async () => {
@@ -38,6 +40,14 @@ export default function Home() {
   return (
     <main className="">
       <MainSwiper></MainSwiper>
+      <section className='w-full min-h-96 py-10'>
+        <div className='w-full max-w-screen-xl m-auto'>
+          <h3 className='text-xl py-4'>NEWS</h3>
+          <div>
+            <News list={newsData} ></News>
+          </div>
+        </div>
+      </section>
       {/* <h1>hello world</h1>
       <div>{hello}</div>
       <Image quality={60} src={logo} width={1000} height={1000} alt={''} />

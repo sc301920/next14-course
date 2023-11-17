@@ -10,7 +10,7 @@ export function AppWrapper({children}:{
     children: React.ReactNode
 }){
     let [state, setState] = useState({
-        hello:'Context-world'
+        hoverIndex: -2,
     });
     return (
         <AppContext.Provider value={state}>

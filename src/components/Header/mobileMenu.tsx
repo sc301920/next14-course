@@ -32,7 +32,7 @@ export default function MobileMenu({isOpen, menu, setOpen}: MobileMenuProps){
             <ul className="p-10">
                 {
                     menu.map((_item, _index) => {
-                        return <div className="text-black-600 cursor-pointer relative text-center p-6" key={`link${_index}`}>
+                        return <div className="text-black cursor-pointer relative text-center p-6" key={`link${_index}`}>
                           <a
                             className="pointer-events-none "
                             href={_item.href}
